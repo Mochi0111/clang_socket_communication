@@ -1,0 +1,14 @@
+services:
+  cppdev:
+    network_mode: host
+    build:
+      network: host
+      context: .
+      args:
+        DIR: "${DIR}"
+    working_dir: /${DIR}
+    volumes:
+      - ./:/${DIR}
+
+    tty: true
+    command: bash
